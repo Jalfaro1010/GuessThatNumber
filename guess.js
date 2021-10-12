@@ -29,10 +29,10 @@ while(restartGame){
     // Asks The Player to Enter A Number To Set The Upper Bound For The Random Number That Will Be Created (AKA Number To Be Guessed).
     rangeNum = prompt(`Please Enter A Maximum Number For The Range`);
 
-    // Using parseInt to attempt to convert the player's response into a number value. If the value cannot be converted then the value returned will be NaN (Not A Number)
+    // Using parseInt to attempt to convert the player's response into a number value. If the value cannot be converted then the value returned will be NaN (Not A Number).
     rangeNum = parseInt(rangeNum);
     
-    // Verifies the player's entry for hte ranged number is a number greater than zero (NOTE: NaN has a default boolean value of false. Also, all numbers both positive/negative, have a default boolean value of true, except for zero which has a boolean value of false)
+    // Verifies the player's entry for hte ranged number is a number greater than zero (NOTE: NaN has a default boolean value of false. Also, all numbers both positive/negative, have a default boolean value of true, except for zero which has a boolean value of false).
 while (!rangeNum || rangeNum < 1){
     rangeNum = prompt(enterNumText);
     rangeNum = parseInt(rangeNum);
@@ -49,6 +49,25 @@ while (!attempts || attempts < 1){
     attempts = parseInt(prompt(enterNumText));
 }
 
+// Asks Player to enter a guess in the range that they set.
+guess = prompt(`Please Enter A Guess Between From 1 to ${rangeNum}. You Have ${attempts} Attempts Left`);
 
+// Continues looping until the player guesses the correct number or runs out of attempts (NOTE" Loops until a BREAK keyword is run).
+while (true){
+    
+    // Attempts to convert the player's guess into a number
+    guess = parseInt(guess);
+
+    //
+    while (!guess || guess < 1 || guess > rangeNum){
+        // Verifies the player's guess is a number greater than zero as well as a number in the range set by the player.
+        guess = parseInt(prompt(`PLease Enter A number From 1 to ${rangeNum}`));
+    }
+    
+
+    // Removes an attempt
+    attempts--;
+    break;
+}
     break;
 }
