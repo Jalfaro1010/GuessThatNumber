@@ -29,14 +29,17 @@ while(restartGame){
     // Asks The Player to Enter A Number To Set The Upper Bound For The Random Number That Will Be Created (AKA Number To Be Guessed).
     rangeNum = prompt(`Please Enter A Maximum Number For The Range`);
 
-    // Using parseInt to attempt to convert the player's response into a number value.
+    // Using parseInt to attempt to convert the player's response into a number value. If the value cannot be converted then the value returned will be NaN (Not A Number)
     rangeNum = parseInt(rangeNum);
     
-    //
+    // Verifies the player's entry for hte ranged number is a number greater than zero (NOTE: NaN has a default boolean value of false. Also, all numbers both positive/negative, have a default boolean value of true, except for zero which has a boolean value of false)
 while (!rangeNum || rangeNum < 1){
     rangeNum = prompt(enterNumText);
     rangeNum = parseInt(rangeNum);
 }
+
+//Creates the random number (AKAA the number to be guessed by the player) using the range number entered by the player.
+randomNum = Math.floor(Math.random() * rangeNum) +1;
 
     break;
 }
