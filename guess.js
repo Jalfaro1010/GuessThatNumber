@@ -41,5 +41,14 @@ while (!rangeNum || rangeNum < 1){
 //Creates the random number (AKAA the number to be guessed by the player) using the range number entered by the player.
 randomNum = Math.floor(Math.random() * rangeNum) +1;
 
+// Prompts player to enter a number of attempts allowed. Also, attempting to convert their response into a number value.
+attempts = parseInt(prompt(`Please Enter A Number of Attemps Allowed`));
+
+// Verifies the player's entry for a number of attempts allowed is a number great than zero
+while (!attempts || attempts < 1){
+    attempts = parseInt(prompt(enterNumText));
+}
+
+
     break;
 }
