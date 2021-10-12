@@ -50,7 +50,7 @@ while (restartGame) {
     }
 
     // Asks Player to enter a guess in the range that they set.
-    guess = prompt(`Please Enter A Guess Between From 1 to ${rangeNum}. You Have ${attempts} Attempts Left`);
+    guess = prompt(`Please Enter A Guess Between 1 to ${rangeNum}. You Have ${attempts} Attempts Left`);
 
     // Continues looping until the player guesses the correct number or runs out of attempts (NOTE" Loops until a BREAK keyword is run).
     while (true) {
@@ -86,6 +86,8 @@ while (restartGame) {
             guess = prompt(`Too High. You have ${attempts} Attempt(s) Left`);
         }
     }
+
+    break;
 }
 
 
