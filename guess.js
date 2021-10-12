@@ -87,7 +87,33 @@ while (restartGame) {
         }
     }
 
+//  Prompts player with option to play again.
+    playAgain = prompt(`Would You Like To Play Again? Y for Yes. N for No.`)
+
+    // loop continues until player submits a valid response.
+    while (true){
+
+        //
+if (playAgain.toUpperCase() === "N") {
+
+    // Alerts the player that the game is over and the game/loop does not restart.
+    alert("Thanks For Playing!");
+    restartGame = false;
     break;
+
+    
+// Checks if the player's response is YES.
+} else if (playAgain.toUpperCase() === "Y") {
+    // The game will restart.
+    break;
+
+    // Prompts the player to enter a valid response and starts this loop again.
+} else {
+    playAgain = prompt(`Please Enter Y or N`)
+}
+        
+}
+
 }
 
 
