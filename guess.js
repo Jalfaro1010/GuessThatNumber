@@ -41,7 +41,7 @@ while (restartGame) {
     //Creates the random number (AKAA the number to be guessed by the player) using the range number entered by the player.
     randomNum = Math.floor(Math.random() * rangeNum) + 1;
 
-    // Prompts player to enter a number of attempts allowed. Also, attempting to convert their response into a number value.
+    // Prompts  the player to enter a number of attempts allowed. Also, attempting to convert their response into a number value.
     attempts = parseInt(prompt(`Please Enter A Number of Attemps Allowed`));
 
     // Verifies the player's entry for a number of attempts allowed is a number great than zero
@@ -49,11 +49,19 @@ while (restartGame) {
         attempts = parseInt(prompt(enterNumText));
     }
 
-    // Asks Player to enter a guess in the range that they set.
+    // Asks the player to enter a guess in the range that they set.
     guess = prompt(`Please Enter A Guess Between 1 to ${rangeNum}. You Have ${attempts} Attempts Left`);
 
     // Continues looping until the player guesses the correct number or runs out of attempts (NOTE" Loops until a BREAK keyword is run).
     while (true) {
+
+        // Displays the number/answer when a code word is entered.
+        if (guess === `Jugeullae`){
+            alert(`The Number Is ${randomNum}`);
+
+// Prompts the player to enter another guess.
+            guess = prompt(`Please Enter A Guess Between 1 to ${rangeNum}. You Have ${attempts} Attempts Left`);
+        } 
 
         // Attempts to convert the player's guess into a number
         guess = parseInt(guess);
